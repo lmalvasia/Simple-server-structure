@@ -1,0 +1,37 @@
+{
+  "name": "server-weekly13",
+  "version": "1.0.0",
+  "description": "development of the application for the CaldAR company",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "start:dev": "nodemon src/index.js",
+    "lint": "eslint ./src",
+    "lint-fix": "eslint ./src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fncordoba/CaldAR.git"
+  },
+  "author": "group-t5",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fncordoba/CaldAR/issues"
+  },
+  "homepage": "https://github.com/fncordoba/CaldAR#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.15"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.6",
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": "lint"
+}
