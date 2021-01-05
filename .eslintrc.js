@@ -16,5 +16,6 @@ module.exports = {
     'no-console': 'off',
     'no-plusplus': 'off',
     'no-await-in-loop': 'off',
+    'no-underscore-dangle': 'off',
   },
 };
