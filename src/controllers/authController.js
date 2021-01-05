@@ -64,13 +64,8 @@ const logout = async (req, res) => {
   });
 };
 
-const checkAuthentication = async (req, res) => {
-  res.status(200).json({});
-};
-
 module.exports = {
   register,
   login,
-  logout,
-  checkAuthentication
+  logout
 };

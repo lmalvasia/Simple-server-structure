@@ -7,7 +7,6 @@ const router = express.Router();
 router
   .post('/register', authController.register)
   .post('/login', authController.login)
-  .post('/logout', authMiddleware, authController.logout)
-  .post('/checkAuthentication', authMiddleware, authController.checkAuthentication);
+  .post('/logout', authMiddleware, authController.logout);
 
 module.exports = router;
