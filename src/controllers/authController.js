@@ -50,6 +50,20 @@ const login = async (req, res) => {
   });
 };
 
+const logout = async (req, res) => {
+  const decoded = await jwt.verify(req.headers.token, process.env.JWT_KEY, null);
+  const user = await models.Users.findById(decoded.userId);
+  if (!user) {
+    return res.status(401).json({
+      message: 'Invalid user credentials',
+    });
+  }
+  await models.Users.findByIdAndUpdate(decoded.userId, { token: '' });
+  return res.status(200).json({
+    message: 'Success',
+  });
+};
+
 const checkAuthentication = async (req, res) => {
   res.status(200).json({});
 };
@@ -57,5 +71,6 @@ const checkAuthentication = async (req, res) => {
 module.exports = {
   register,
   login,
+  logout,
   checkAuthentication
 };
